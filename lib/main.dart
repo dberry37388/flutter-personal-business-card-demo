@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(MyApp());
@@ -48,38 +49,98 @@ class MyApp extends StatelessWidget {
                   color: Colors.teal.shade100,
                 ),
               ),
-              Card(
-                color: Colors.black,
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-                child: ListTile(
-                  leading: Icon(
-                    Icons.phone,
-                    color: Colors.white,
-                  ),
-                  title: Text(
-                    '+1 830-477-7624',
-                    style: TextStyle(
+              FlatButton(
+                onPressed: () {
+                  launch(('tel://+18304777624'));
+                },
+                child: Card(
+                  color: Colors.black,
+                  margin:
+                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.phone,
                       color: Colors.white,
-                      fontSize: 20.0,
-                      fontFamily: 'Source Sans Pro',
+                    ),
+                    title: Text(
+                      'Call Daniel',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15.0,
+                        fontFamily: 'Source Sans Pro',
+                      ),
                     ),
                   ),
                 ),
               ),
-              Card(
-                color: Colors.black,
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-                child: ListTile(
-                  leading: Icon(
-                    Icons.email,
-                    color: Colors.white,
-                  ),
-                  title: Text(
-                    'daniel@builtbyberry.com',
-                    style: TextStyle(
-                      fontFamily: 'Source Sans Pro',
-                      fontSize: 20.0,
+              FlatButton(
+                onPressed: () {
+                  launch(('sms://+18304777624'));
+                },
+                child: Card(
+                  color: Colors.black,
+                  margin:
+                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.textsms,
                       color: Colors.white,
+                    ),
+                    title: Text(
+                      'Text Daniel',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15.0,
+                        fontFamily: 'Source Sans Pro',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              FlatButton(
+                onPressed: () {
+                  launch('mailto:aldermanberry@tullahomatn.gov');
+                },
+                child: Card(
+                  color: Colors.black,
+                  margin:
+                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.email,
+                      color: Colors.white,
+                    ),
+                    title: Text(
+                      'aldermanberry@tullahomatn.gov',
+                      style: TextStyle(
+                        fontFamily: 'Source Sans Pro',
+                        fontSize: 15.0,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              FlatButton(
+                onPressed: () {
+                  launch(('fb://page/829428654122154'));
+                },
+                child: Card(
+                  color: Colors.black,
+                  margin:
+                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.thumb_up,
+                      color: Colors.white,
+                    ),
+                    title: Text(
+                      '@aldermanberry',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15.0,
+                        fontFamily: 'Source Sans Pro',
+                      ),
                     ),
                   ),
                 ),
